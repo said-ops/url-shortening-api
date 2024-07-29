@@ -10,6 +10,7 @@
 *::after,
 *::before{
     box-sizing: border-box;
+    transition: all 0.6s ease;
 }
 :root{
     --cyan:hsl(180, 66%, 49%);
@@ -20,5 +21,122 @@
     --very-dark-blue:hsl(255, 11%, 22%);
     --very-dark-violet:hsl(260, 8%, 14%);
     --copy-font-size:18px;
+    --font-meduim:'poppins medium';
+    --font-bold:'poppins bold';
 }
 /*=======================================================*/
+/*====================header styling=======================*/
+header,
+nav,
+.nav-1 ul,
+.nav-2 ul{
+    display: flex;
+}
+header{
+    padding-inline:10.3rem ;
+    gap: 3rem;
+    height: 8.9rem;
+    align-items: center;
+}
+nav{
+    flex-grow: 1;
+    justify-content: space-between;
+    font-family: var(--font-bold);
+    color: var(--grayish-violet);
+    align-items: center;
+    font-size: 15px;
+}
+.nav-1 ul,
+.nav-2 ul{
+    gap:2rem;
+    align-items: center;
+}
+.nav-1{
+    margin-bottom: 5px;
+    margin-right:3px;
+}
+.signup-btn{
+    font-family: var(--font-bold);
+    border: 0;
+    background-color: var(--cyan);
+    color: white;
+    width: 7rem;
+    height: 2.5rem;
+    padding: 0;
+    border-radius: 2rem;
+    font-size: 16px;
+}
+.signup-btn:hover{
+    background-color: hsl(181, 57%, 74%);
+    cursor: pointer;
+}
+.nav-1 ul li:hover,
+.nav-2 ul li:first-of-type:hover{
+    color: var(--dark-violet);
+    cursor: pointer;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.menu-icon{
+    display: none;
+}
+/*===========header media =================*/
+@media screen and (max-width: 800px) {
+    header{
+        justify-content: space-between;
+        padding-inline: 10%;
+    }
+    .menu-icon{
+        display: block;
+    }
+    nav{
+        position: absolute;
+        width: 80%;
+        height: 40%;
+        flex-direction: column;
+        top: 8.9rem;
+        right: 10%;
+        justify-content: space-around;
+        background-color: var(--dark-violet);
+        color: white;
+        border-radius: 1rem;
+        z-index: 2;
+        display: none;
+        
+    }
+    .nav-1 ul::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 63%;
+        height: 1px;
+        background-color: var(--grayish-violet);
+        top: 58%;
+        
+    }
+    body > header > div.menu-icon > svg > g{
+        fill: var(--dark-violet);
+    }
+    .nav-1 ul,.nav-2 ul{
+        flex-direction: column;
+    }
+    .nav-2{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 430px) {
+    nav{
+        width: 90%;
+        right: 5%;
+        height: 51%;
+        top: 6.5rem;
+    }
+    .nav-2 ul li:last-of-type{
+        width: 100%;
+        text-align: center;
+    }
+    .signup-btn{
+        width: 90%;
+    }
+}

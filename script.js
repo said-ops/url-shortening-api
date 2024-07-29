@@ -14,4 +14,7 @@ window.addEventListener('resize' , () => {
     if(window.innerWidth > 800){
         nav.style.display = 'flex';
     }
+    if(window.innerWidth < 800){
+        nav.style.display = 'none';
+    }
 })

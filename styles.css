@@ -102,18 +102,16 @@ nav{
         color: white;
         border-radius: 1rem;
         z-index: 2;
-        display: none;
-        
+        display: none;  
     }
     .nav-1 ul::after{
         content: '';
         display: block;
         position: absolute;
-        width: 63%;
+        width: 90%;
         height: 1px;
         background-color: var(--grayish-violet);
-        top: 58%;
-        
+        top: 58%;  
     }
     body > header > div.menu-icon > svg > g{
         fill: var(--dark-violet);
@@ -124,6 +122,10 @@ nav{
     .nav-2{
         width: 100%;
     }
+    .nav-1 ul li:hover,
+.nav-2 ul li:first-of-type:hover{
+    color: var(--cyan);
+}
 }
 @media screen and (max-width : 430px) {
     nav{
@@ -138,5 +140,70 @@ nav{
     }
     .signup-btn{
         width: 90%;
+    }
+}
+/*===============banner styling================*/
+.banner{
+    display: flex;
+    margin-left: 10.3rem;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.banner-img{
+    overflow: hidden;
+}
+body > section > div > div.banner-text > h1{
+    font-family: 'poppins bold';
+    font-size: 5.2rem;
+    line-height: 1.2;
+    color: var(--very-dark-blue);
+}
+.banner-text{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.banner-text p{
+    color: var(--grayish-violet);    
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    font-family: var(--font-meduim);
+}
+.start-btn{
+    width: 13rem;
+    height: 3.5rem;
+    margin-top: 1rem;
+    font-size: 20px;
+}
+.banner-img img{
+    margin-top: 1rem;
+}
+/*==============banner media queries============*/
+@media screen and (max-width:800px) {
+    
+        .banner{
+            flex-direction: column-reverse;
+            margin-left: 0;
+        }
+        .banner-img{
+            width: 100%;
+        }
+        .banner-img img{
+            position: relative;
+            left: 1rem;
+        }
+        .banner-text{
+            width: 100%;
+        text-align: center;
+        align-items: center;
+        }
+}
+@media screen and (max-width:530px) {
+    body > section > div > div.banner-text > h1{
+        font-size: 3rem;
     }
 }

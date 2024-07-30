@@ -484,10 +484,47 @@ body > main > section > div > svg > path{
         .card-logo{
             transform: translate(0, -8rem);
         }
+        .cards div:nth-child(2) span::before,
+        .cards div:nth-child(3) span::before{
+            content: '';
+            display: block;
+            height: 9px;
+            background-color: var(--cyan);
+            width: 71%;
+            position: absolute;
+            bottom: 6.5rem;
+            transform: rotate(90deg);
+        }
 }
 @media screen and (max-width:500px) {
 
         .card{
             width: auto;
         }
+}
+/*====================boost section==============*/
+body > section.boost > svg{
+    position: absolute;
+    z-index: -1;
+    background-color: var(--dark-violet);
+    width: 100%;
+}
+.boost{
+    height: 15.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.boost-heading{
+    font-size: 2.5rem;
+    font-family: var(--font-bold);
+    color: white;
+}
+@media screen and (max-width:500px) {
+
+    .boost-heading{
+        font-size: 1.5rem;
+    }
 }

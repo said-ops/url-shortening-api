@@ -355,7 +355,7 @@ body > main > section > div > svg > path{
 }
 @media screen and (max-width:500px) {
     main{
-        padding: 1rem;
+        padding:4rem 1rem;
     }
     .shorten{
         bottom: 2rem;
@@ -461,7 +461,7 @@ body > main > section > div > svg > path{
     height: 8px;
     background-color: var(--cyan);
     position: absolute;
-    width: 120%;
+    width: 140%;
     left: 100%;
     top: 57%;
 }
@@ -527,4 +527,64 @@ body > section.boost > svg{
     .boost-heading{
         font-size: 1.5rem;
     }
+}
+/*================footer styling=================*/
+footer{
+    background-color: var(--very-dark-violet);
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10.3rem;
+    padding-top: 2rem;
+    padding-bottom:2rem;
+    height:18rem;
+    gap: 2rem;
+}
+body > footer > div.footer-logo > svg > path{
+    fill: white;
+}
+.footer-content{
+    display: flex;
+    gap: 4rem;
+}
+.features,
+.resources,
+.company{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: var(--font-meduim);
+    color: var(--grayish-violet);
+}
+footer h3{
+    font-family: var(--font-bold);
+    color: white;
+    font-size: 15px;
+}
+footer ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 15px;
+}
+.footer-icons{
+    display: flex;
+    gap: 1.5rem;
+}
+footer ul li:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
+body  footer  div.footer-content div.footer-icons   svg:hover  path{
+    fill: var(--cyan);
+    cursor: pointer;
+}
+@media screen and (max-width:768px) {
+    
+        footer,.footer-content{
+            flex-direction: column;
+            height: auto;
+            align-items: center;
+            padding-inline: 5rem;
+            text-align: center;
+        }
 }

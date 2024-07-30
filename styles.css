@@ -10,7 +10,7 @@
 *::after,
 *::before{
     box-sizing: border-box;
-    transition: all 0.6s ease;
+    
 }
 :root{
     --cyan:hsl(180, 66%, 49%);
@@ -23,6 +23,10 @@
     --copy-font-size:18px;
     --font-meduim:'poppins medium';
     --font-bold:'poppins bold';
+}
+::selection{
+    background-color: var(--cyan);
+    color: white;
 }
 /*=======================================================*/
 /*====================header styling=======================*/
@@ -131,7 +135,7 @@ nav{
     nav{
         width: 90%;
         right: 5%;
-        height: 51%;
+        height: 70%;
         top: 6.5rem;
     }
     .nav-2 ul li:last-of-type{
@@ -143,6 +147,10 @@ nav{
     }
 }
 /*===============banner styling================*/
+.banner-container{
+    padding-top: 4%;
+    padding-bottom: 8%;
+}
 .banner{
     display: flex;
     margin-left: 10.3rem;
@@ -188,6 +196,7 @@ body > section > div > div.banner-text > h1{
         .banner{
             flex-direction: column-reverse;
             margin-left: 0;
+            padding-top: 0;
         }
         .banner-img{
             width: 100%;
@@ -201,9 +210,125 @@ body > section > div > div.banner-text > h1{
         text-align: center;
         align-items: center;
         }
+        .banner-text p{
+            width: 80%; 
+        }
 }
 @media screen and (max-width:530px) {
     body > section > div > div.banner-text > h1{
         font-size: 3rem;
+    }
+}
+/*================main styling===================*/
+/*=================shorten section===============*/
+main{
+    height: 100vh;
+    padding-inline: 10.3rem;
+    background-color: rgba(236, 233, 233, 0.664);
+}
+.shorten{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.form-container{
+    height: 10.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body > main > section > div > svg{
+    position: absolute;
+    z-index: -1;
+    background-color: var(--dark-violet);
+    border-radius: 1rem;
+    width: 100%;
+}
+body > main > section > div > svg > path{
+        fill: hsl(255, 25%, 34%);
+}
+#shorten-form{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 2rem;
+}
+#shorten-form input{
+    width: 60%;
+    height: 3.5rem;
+    padding-left: 3rem;
+    border-radius: 12px;
+    outline: 0;
+    font-family: var(--font-meduim);
+    font-size: 20px;
+    border: 0;
+}
+.form-container span{
+    font-family: var(--font-meduim);
+    font-style: italic;
+    color: var(--red);
+    margin-left: 6.5rem;
+    margin-top: 1rem;
+}
+.link-elemnt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-meduim);
+    font-size: 20px;
+    background-color: white;
+    height: 5rem;
+    border-radius: 10px;
+    padding-inline: 2rem;
+}
+.links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.shrtn-link{
+    color: var(--cyan);
+}
+.copy-link{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.copy-btn{
+    border-radius: 0.5rem;
+}
+@media screen and (max-width:800px) {
+    main{
+        padding-inline: 5rem;
+    }
+    .shorten{
+        width: 100%;
+    }
+    body > main > section > div > svg{
+        height: 25%;
+        border-radius: 0;
+    }
+    #shorten-form{
+        flex-direction: column;
+        align-items: center;
+    }
+    .link-elemnt{
+        flex-direction: column;
+        height: 12rem;
+        justify-content: space-evenly;
+    }
+    .copy-link{
+        flex-direction: column;
+    }
+    #shorten-form input{
+        width: auto;
+    }
+
+}
+@media screen and (max-width:500px) {
+    main{
+        padding-inline: 0;
     }
 }

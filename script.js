@@ -99,7 +99,7 @@ function appendUrl (inputUrl,shortnUrl){
 
     li.appendChild(div);
 
-    linkList.appendChild(li);
+    linkList.insertBefore(li, linkList.firstChild);
 
 }
 

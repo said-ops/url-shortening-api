@@ -524,10 +524,10 @@ footer {
   display: flex;
   justify-content: space-between;
   padding-inline: 10.3rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 2rem;
-  height: 18rem;
   gap: 2rem;
+  height: 24rem;
 }
 body > footer > div.footer-logo > svg > path {
   fill: white;

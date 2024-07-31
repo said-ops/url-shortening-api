@@ -306,6 +306,9 @@ body > main > section > div > svg > path {
 .shortn-btn {
   border-radius: 0.5rem;
 }
+.error{
+  display: none;
+}
 @media screen and (max-width: 800px) {
   main {
     padding-inline: 5rem;
@@ -315,7 +318,7 @@ body > main > section > div > svg > path {
     bottom: 6rem;
   }
   body > main > section > div > svg {
-    height: 25%;
+    
     border-radius: 10px;
   }
   #shorten-form {

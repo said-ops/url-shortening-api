@@ -581,3 +581,8 @@ body footer div.footer-content div.footer-icons svg:hover path {
     text-align: center;
   }
 }
+.input-error{
+  border: 1;
+  outline: 1;
+  border: 2px solid var(--red);
+}

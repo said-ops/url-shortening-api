@@ -49,7 +49,11 @@ async function fetchData(){
         const data = await response.json();
         console.log(data.data.short_url);
         appendUrl(url,data.data.short_url);
-    }   
+        shortenLink.value = '';
+        saveLinks(url,data.data.short_url);
+    }else{
+        alert('Invalid Link!');
+    }  
 }
 function appendUrl (inputUrl,shortnUrl){
     const linkList = document.getElementById('links-input');
@@ -74,6 +78,22 @@ function appendUrl (inputUrl,shortnUrl){
     copyBtn.classList.add('copy-btn');
     copyBtn.textContent = 'Copy';
 
+    copyBtn.addEventListener('click', () => {
+
+    const text = shortnLink.textContent;
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            
+            copyBtn.style.backgroundColor = 'var(--dark-violet)';
+            copyBtn.style.color = 'white';
+            copyBtn.textContent = 'Copied!'
+        })
+        .catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    } );
+
     div.appendChild(shortnLink);
     div.appendChild(copyBtn);
 
@@ -81,20 +101,51 @@ function appendUrl (inputUrl,shortnUrl){
 
     linkList.appendChild(li);
 
+}
 
+function saveLinks(originalUrl, shortUrl) {
+    
+    let links = JSON.parse(localStorage.getItem('shortenedLinks')) || [];
+    links.unshift({ originalUrl, shortUrl });
+
+    if (links.length > 3) {
+        links.pop();
+    }
+
+    localStorage.setItem('shortenedLinks', JSON.stringify(links));
+}
+function storedLinks() {
+    
+    let links = JSON.parse(localStorage.getItem('shortenedLinks')) || [];
+
+    if (links.length > 0) {
+        links.forEach(link => {
+            appendUrl(link.originalUrl,link.shortUrl)
+        });
+    } else {
+        console.log('No links stored.');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    
+    storedLinks();
+
     document.getElementById('menu-icon').addEventListener('click', hundleMenu);
     resizeHundle();
+
     shortenBtn.addEventListener('click',() => {
         if(shortenLink.value){
             fetchData();
+            errorText.style.display='none';
+            document.querySelector('#shorten-form input').style.border = '0';
         }else{
             errorText.style.display='block';
-            
+            shortenLink.classList.add('input-error');
+            document.querySelector('#shorten-form input').style.border = '2px solid var(--red)';
         }
     });
+
     document.getElementById('shorten-form').addEventListener('submit',(e) => {
 
         e.preventDefault();

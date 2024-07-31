@@ -149,23 +149,23 @@ nav {
 }
 /*===============banner styling================*/
 .banner-container {
-  padding-top: 4%;
+  /* padding-top: 4%; */
   padding-bottom: 8%;
 }
 .banner {
   display: flex;
-  margin-left: 10.3rem;
-  gap: 2rem;
-  align-items: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+    margin-left: 10.3rem;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 .banner-img {
   overflow: hidden;
 }
 body > section > div > div.banner-text > h1 {
   font-family: "poppins bold";
-  font-size: 4.2rem;
+  font-size: 5.2rem;
   line-height: 1.2;
   color: var(--very-dark-blue);
 }
@@ -525,7 +525,7 @@ body > section.boost > svg {
 footer {
   background-color: var(--very-dark-violet);
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding-inline: 10.3rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -537,7 +537,9 @@ body > footer > div.footer-logo > svg > path {
 }
 .footer-content {
   display: flex;
-  gap: 4rem;
+    flex: 1;
+    justify-content: end;
+    gap: 6rem;
 }
 .features,
 .resources,
@@ -577,7 +579,7 @@ body footer div.footer-content div.footer-icons svg:hover path {
     flex-direction: column;
     height: auto;
     align-items: center;
-    padding-inline: 5rem;
+    padding-inline: 4rem;
     text-align: center;
   }
 }
